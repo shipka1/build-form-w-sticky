@@ -11,11 +11,16 @@ section {
     padding: 1rem;
 }
 
-h2 {
+h2,
+h3 {
     color:#dc413e;
     text-transform: uppercase;
     font-size: 3.75rem;
     font-weight: 200;
+}
+
+h3 {
+    font-size: 2.815rem;
 }
 
 p {
@@ -25,10 +30,19 @@ p {
 
 header {
     background-color: #000;
+    position: sticky;
+    position: -webkit-sticky;
+    top: -90px;
 }
 
 svg {
     fill: #fff;
+}
+
+nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 
 .nav-links a {
@@ -51,6 +65,7 @@ svg {
 fieldset {
     border: none;
     padding: 0;
+    margin-bottom: 40px;
 }
 
 label {
@@ -59,10 +74,84 @@ label {
     display: block;
 }
 
-input {
+input,
+textarea {
     width: 100%;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
     padding: 0.5rem;
     box-shadow: 2px 2px 3px #e8e8e8;
+}
+
+textarea {
+    resize: none;
+    min-height: 300px;
+}
+
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+label[for="accept"] {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+label[type="submit"] {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    width: auto;
+    border: none;
+    background-color: #fff;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+input[type="submit"]:hover {
+    color: #dc413e;
+    padding-left: 20px;
+}
+
+input[id="name"]:invalid,
+input[id="tel"]:invalid,
+input[id="email"]:invalid,
+input[id="deadline"]:invalid,
+input[id="target"]:invalid {
+    outline: 1px solid #dc413e;
+}
+
+input[id="name"]:valid,
+input[id="tel"]:valid,
+input[id="email"]:valid,
+input[id="deadline"]:valid,
+input[id="target"]:valid {
+    outline: 1px solid lightgreen;
+}
+
+@media only screen and (min-width:1260px) {
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    fieldset div {
+        flex: 0 1 49%;
+    }
+
+    h3 {
+        width: 100%;
+    }
+
+    .inner-container,
+    section {
+        padding: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
